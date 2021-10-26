@@ -5,17 +5,16 @@ html {
   }
   
 body,
-#root,
-.App {
+#root{
   height: 100%;
   margin: 0;
 }
 
-.App {
+/* .App {
   display: grid;
   grid-template-columns: 70% 1fr;
   grid-template-rows: 70px auto;
-}
+} */
 .search-form {
   border-bottom: 1px solid lightgray;
   display: flex;
