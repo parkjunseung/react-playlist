@@ -6,14 +6,25 @@ import VideoList from './components/VideoList';
 import VideoPlayer from './components/VideoPlayer';
 import Googlebutton from './components/Googlebutton';
 import styled from 'styled-components';
+import GlobalStyle from './components/GlobalStyle';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-const StyledDiv = styled.div`
+const GridContainer  = styled.div`
   height: 100%;
   margin: 0;
   display: grid;
-  grid-template-columns: 70% 1fr;
-  grid-template-rows: 70px auto;
+  grid-template-columns: 15% 1fr;
+  grid-template-rows: 15% auto;
+  position: relative;
 `;
+
+const SideBar = styled.div`
+  height: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+`;
+
 
 export default class App extends React.Component {
 
@@ -48,13 +59,18 @@ export default class App extends React.Component {
 
   render () {
     return (
-      <StyledDiv className='App'>
-        <Search onSearch={this.onSearch}/>
-        <VideoList onVideoSelected={this.onVideoSelected}
-        data={this.state.videoMataInfo}/>
-        <VideoPlayer videoId={this.state.selectedVideoId}/>
-        <Googlebutton/>
-      </StyledDiv>
+      <>
+        <GlobalStyle />
+        <GridContainer className='App'>
+          <SideBar>
+            <Search onSearch={this.onSearch}></Search>
+            <Googlebutton/> 
+          </SideBar>
+          <VideoList onVideoSelected={this.onVideoSelected}
+          data={this.state.videoMataInfo}/>
+          {/* <VideoPlayer videoId={this.state.selectedVideoId}/> */}
+        </GridContainer>
+      </>
     )
   }
 }

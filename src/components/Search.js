@@ -1,4 +1,21 @@
 import React from "react";
+import styled from 'styled-components';
+
+
+const StyledBackground = styled.div`
+    width: 100%;
+    height: 95vh;
+    background: #eeeeee;
+    display: grid;
+    grid-template-rows: 50px auto 1fr;
+`;
+const StyledDiv = styled.div`
+    width: 100%;
+    font-size: 1.3vw;
+    font-weight:bold;
+    padding: 1vw 1.5vw;
+`;
+
 
 class Search extends React.Component {
     state={title:""}
@@ -25,7 +42,8 @@ class Search extends React.Component {
     render(){
 
         return (
-            <div>
+            <StyledBackground>
+                <StyledDiv>Music</StyledDiv>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-controls">
                         <label>Search</label>
@@ -33,7 +51,7 @@ class Search extends React.Component {
                         onChange={this.onSearchChanged} id="video-search" type="text" placeholder="Enter Search Keyword"></input>
                     </div>   
                 </form>
-            </div>
+            </StyledBackground>
         )
     }
 }

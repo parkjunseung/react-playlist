@@ -29,7 +29,7 @@ class Googlebutton extends Component {
             <Container>
                 <GoogleLogin
                     clientId={clientId}
-                    buttonText="Google"
+                    buttonText="로그인"
                     onSuccess={this.responseGoogle}
                     onFailure={this.responseFail}
                 />
@@ -39,11 +39,10 @@ class Googlebutton extends Component {
 }
 
 const Container = styled.div`
-    position: fiexd;
-    left : 0;
-    buttom : 0;
-    width: 200px;
-    height: 20px;
+width: 100%;
+height:5vh;
+background: #eeeeee;
+grid-row-start: 3;
 `
 
 

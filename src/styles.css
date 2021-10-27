@@ -24,18 +24,14 @@ body,
 }
 
 .form-controls {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: space-between;
+  width: 40%;
+  margin: 1vw 1.5vw;
 }
 .form-controls input[type="text"] {
-  display: flex;
   border: 1px solid lightgray;
-  flex-grow: 1;
   padding: 10px;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 0.8vw;
 }
 .form-controls input[type="text"]:focus {
   outline: none;
